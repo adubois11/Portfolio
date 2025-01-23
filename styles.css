@@ -1,0 +1,691 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@400;500&display=swap');
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%);
+  /* background: linear-gradient(145deg, #ff39e6, #00d0ff); */
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: right;
+  color: white;
+  padding: 40px;
+  animation: fadeIn 1s ease-in-out;
+  padding-inline-start: 15%;
+
+}
+
+.hero-content h1 {
+
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  font-family: "Kumar One Outline", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  transform: scaleY(2); /* Elongates the text by 2 times its original height */
+  transform-origin: top; /* Ensures the stretching starts from the top */
+  display: inline-block; /* Necessary to prevent distortion of inline text */
+}
+
+
+
+
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: 'Roboto', serif;
+  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1.5s 0.5s ease-in-out forwards;
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  #hero {
+
+    padding-left: 28%;
+  }
+  #hero .hero-content h1 {
+    font-size: 2.5rem;  /* Adjusting font size for smaller screens */
+line-height: 2.5rem;
+  }
+  #hero .hero-content h2 {
+    font-size: 1.5rem;  /* Adjusting font size for smaller screens */
+    margin-top: 2rem;
+  }
+}
+
+/* Skills Section */
+#skills {
+  padding: 60px 20px;
+  background: #1a1a1a;
+  text-align: center;
+  color: #f5f5f5;
+  padding-inline-start: 15%;
+  height: 100vh;
+
+}
+
+#skills h2 {
+  margin-top: 2rem;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Roboto', serif;
+}
+
+#skills h3 {
+  font-size: 1.4rem;
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  margin-bottom: 2rem;
+  text-align: center;
+
+}
+
+
+.skill-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%);
+  border-image-slice: 1;
+  ;
+}
+
+.skill {
+  /* background-color: #2d2d2d;
+  padding: 30px; */
+  width: 150px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1rem;
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); */
+}
+
+.skill i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  /* background-color: #4f6d7a; */
+}
+
+.skill:hover i {
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+    transform: scale(1.1) rotate(5deg);  /* Slight rotation with scaling */
+}
+
+.skill:hover p {
+  opacity: 1;
+}
+
+/* Learning Skills Styling */
+
+.skill-list.learning{
+  border: none;
+}
+
+
+.skill.learning {
+  background-color: #1a1a1a;
+  border: 2px solid transparent;
+  border-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%);
+  border-image-slice: 1;
+  padding: 1rem;
+  width : 20%;
+  margin-inline: 2rem;
+}
+
+.skill.learning i {
+  color: #00d0ff;
+}
+
+.skill.learning p {
+  opacity: 1;
+  color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #skills {
+    padding-inline-start: 30%;
+    height: auto;
+
+
+  }
+
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .skills p {
+    opacity: 1;
+  }
+  .skill {
+    max-width: 40px;
+    max-height: 100px;  /* Prevents overly wide skills on small screens */
+  }
+}
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 1024px) {
+  #skills {height: auto;}
+  .skill.learning {
+    width: 30%; /* Decrease the width for medium-sized screens */
+    margin-inline: 1rem; /* Reduce margins */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skill.learning {
+    padding-inline: 4rem;
+    max-width: 150px;
+    max-height: 200px;
+    font-size: smaller; /* Prevents overly wide skills on small screens */    margin-inline: 0.5rem; /* Smaller margins */
+  }
+}
+
+/* Projects Section */
+#projects {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  /* padding: 60px 20px; */
+  padding-inline-start: 15%;
+}
+
+#projects h2 {
+  font-size: 2.8rem;
+  text-align: right;
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Project Cards List */
+.projects-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 40px;
+  justify-content: flex-end;
+}
+
+/* Individual Project Card */
+.project-card {
+
+
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  padding: 2rem;}
+
+.project-card.left {
+  border-right: 4px solid #f778ba;
+}
+
+
+/* Project Image Section */
+.project-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.project-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+
+
+.project-img:hover {
+  transform: scale(1.05);
+}
+
+/* Project Info Section */
+.project-info {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+
+}
+
+.project-info h3 {
+  font-size: 2rem;
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  margin-top: 2rem;
+
+}
+
+.project-info h4 {
+  font-size: 1.1rem;
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  margin-top: 1rem;
+
+}
+
+.project-info p {
+  margin-block: 1rem;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.skills-used {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  align-self: center;
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+
+}
+
+.skills-used i {
+  font-size: 2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-used i:hover {
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+    transform: scale(1.1) rotate(5deg);  /* Slight rotation with scaling */
+}
+
+/* Project Links */
+.project-links {
+  margin-top: 2rem;
+}
+
+.repo-link {
+  font-size: 3rem;  /* Set the font size */
+  font-weight: bold;  /* Optional: make the text bold */
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  display: inline;  /* Makes the text inline for normal flow */
+  font-size: 1.2rem;
+  border: 2px solid transparent;
+  border-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%);
+  border-image-slice: 1;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background-image 0.5s ease, transform 0.7s ease;
+}
+
+.repo-link:hover {
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #projects {
+    height: auto;
+  }
+
+  .projects-list {
+
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .project-info {
+    padding: 15px;
+  }
+
+  .project-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Contact Section */
+#contact {
+  padding: 60px 20px;
+  text-align: center;
+  color: #f5f5f5;
+  padding-inline-start: 15%;
+  height: 100vh;
+  /* background-image:  linear-gradient(145deg, #ff39e6, #00d0ff, #ff7b72); */
+
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-buttons {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;  /* Fixed size for round button */
+  height: 60px; /* Fixed size for round button */
+  font-size: 1.8rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  border-radius: 50%; /* Round button */
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);  /* Subtle floating effect */
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Adding depth on hover */
+}
+
+.contact-button i {
+  margin: 0;  /* No extra space around icons */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .contact-buttons {
+    gap: 20px;
+  }
+
+  .contact-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Side Navbar Styling */
+#side-navbar {
+  animation: slideIn 3s ease-in-out;
+
+  position: fixed; /* Fixed position to stay on the left side */
+  top: 0;
+  left: 0;
+  height: 100%; /* Full screen height */
+  width: 20%; /* Adjust the width of the navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start; /* Align the menu items to the left */
+  padding-top: 50px; /* Space from the top */
+  z-index: 1000; /* Ensure the navbar stays on top */
+  transition: transform 0.3s ease; /* Smooth transition for the navbar */
+}
+
+/* Navbar Links */
+#side-navbar ul {
+  list-style: none; /* Remove default list styling */
+}
+
+#side-navbar ul li {
+  margin: 20px 0; /* Spacing between links */
+}
+
+#side-navbar ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+#side-navbar ul li a:hover {
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  transform: translateX(10px); /* Slight horizontal movement */
+}
+
+/* Active Link Styling with :target */
+#side-navbar ul li a:focus {
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows */
+  transform: translateX(10px); /* Slight horizontal movement */
+}
+
+
+/* Add a media query for smaller screens */
+@media screen and (max-width: 768px) {
+  #side-navbar {
+    width: 15%; /* Narrow navbar on smaller screens */
+  }
+
+  #side-navbar ul li a {
+    font-size: 1rem; /* Smaller font size for smaller screens */
+  }
+}
+
+/* La vidéo en arrière-plan */
+.video-background {
+  position: fixed; /* Position fixe pour que la vidéo couvre toute la fenêtre */
+  top: 0;
+  opacity: 0.7; /* Video opacity 0.5 normal setting, 0 to make it disappear */
+  filter: grayscale(10%); /* Black and white image */
+  left: 0;
+  width: 100%;  /* La vidéo couvre toute la largeur de la fenêtre */
+  height: 100%; /* La vidéo couvre toute la hauteur de la fenêtre */
+  object-fit: cover; /* La vidéo s'adapte pour couvrir l'ensemble de la fenêtre sans déformation */
+  z-index: -1; /* La vidéo est en arrière-plan */
+}
+
+/* General Form Styles */
+.contact-form {
+  padding-inline-start: 15%;
+  background-color: #1a1a1a;  /* Dark background */
+  color: #f5f5f5;  /* Light text */
+  opacity: 0.9;  /* Slightly transparent */
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;  /* Rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);  /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 1s ease-in-out; /* Optional fade-in animation */
+}
+
+/* Form Label Styles */
+.contact-form label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #f5f5f5;
+  display: inline-block;
+}
+
+/* Form Input/Textarea Styles */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #2a2a2a;  /* Darker input field */
+  border: 2px solid #333;  /* Subtle border */
+  color: #f5f5f5;  /* Text color */
+  border-radius: 8px;  /* Rounded corners */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d2a8ff;  /* Highlight border on focus */
+  background-color: #333;  /* Slightly darker background */
+  outline: none;  /* Remove default focus outline */
+}
+
+/* Button Styles */
+.contact-form button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-image: linear-gradient(140deg, #d2a8ff 12.09%, #f778ba 42.58%, #ff7b72 84.96%);  /* Gradient background */
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: transparent;  /* Make text color transparent to show the gradient */
+  background-clip: text;  /* Clip the background to the text */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(45deg, #ff39e6, #00d0ff, #ff7b72);  /* Hover gradient */
+  color: transparent;
+}
+
+/* Add responsiveness for small screens */
+@media screen and (max-width: 768px) {
+  #contact {
+    height: 100vh;
+padding-inline-start: 28%;
+
+}
+
+  .contact-form {
+    padding: 1.5rem;
+    height: 60vh;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;  /* Adjust font size for smaller screens */
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

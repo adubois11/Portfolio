@@ -268,7 +268,7 @@ line-height: 2.5rem;
 #projects h2 {
   font-size: 2.8rem;
   text-align: right;
-  margin-bottom: 40px;
+  margin-block: 40px;
   font-family: 'Roboto', sans-serif;
 
 }
